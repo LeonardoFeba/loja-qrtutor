@@ -1,0 +1,14 @@
+# Arquivos temporários
+node_modules/
+
+# Arquivos de dependências do npm
+npm-debug.log
+
+# Arquivos gerados durante a construção
+/build/
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração específicos do ambiente
+.env
