@@ -60,6 +60,7 @@ function addToCart(name, price) {
 function updateCartModal() {
   cartItemsContainer.innerHTML = "";
   let total = 0;
+  let totalItems = 0;
 
   cart.forEach((item) => {
     const cartItemElement = document.createElement("div");
@@ -88,6 +89,7 @@ function updateCartModal() {
         `;
 
     total += item.price * item.quantity;
+    totalItems += item.quantity; // Soma a quantidade de itens
     cartItemsContainer.appendChild(cartItemElement);
   });
 
@@ -96,11 +98,8 @@ function updateCartModal() {
     currency: "BRL",
   });
 
-  cartCounter.innerHTML = cart.length;
+  cartCounter.innerHTML = totalItems; // Atualiza o contador com o total de itens
 }
-
-//Função para remover item do carrinho
-
 cartItemsContainer.addEventListener("click", function (event) {
   if (event.target.classList.contains("remove-from-cart-btn")) {
     const name = event.target.getAttribute("data-name");
